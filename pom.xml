@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>net.megaplanet</groupId>
+	<artifactId>AutoSaveWorld</artifactId>
+	<version>4.3</version>
+
+	<name>AutoSaveWorld</name>
+
+	<packaging>jar</packaging>  
+  
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- Change MC Version HERE! -->
+		<bukkitVersion>1.15.1-R0.1-SNAPSHOT</bukkitVersion>
+
+		<server.jars>${project.basedir}/libs</server.jars>
+	</properties>
+
+  	<build>
+		<finalName>${project.name}</finalName>
+		<defaultGoal>clean install</defaultGoal>
+		<plugins>
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<additionalProjectnatures>
+						<projectnature>org.eclipse.m2e.core.maven2Nature</projectnature>
+					</additionalProjectnatures>
+					<buildcommands>
+						<buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
+						<buildcommand>org.eclipse.m2e.core.maven2Builder</buildcommand>
+					</buildcommands>
+					<useProjectReferences>false</useProjectReferences>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>libs/</classpathPrefix>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>plugin.yml</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+        
+	<repositories>
+		<!-- SpigotMC Repo (Bukkit and SpigotAPI) -->
+		<repository>
+			<id>spigot-repo</id>
+			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+		</repository>
+	    <repository>
+	        <id>ess-repo</id>
+	        <url>https://ci.ender.zone/plugin/repository/everything/</url>
+	    </repository>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>        
+        
+        <dependencies>
+			<!-- Maven Dependencies -->
+			<!-- Spigot-Api, https://www.spigotmc.org/ Based on the Bukkit project, http://bukkit.org/ -->
+			<dependency>
+				<groupId>org.spigotmc</groupId>
+				<artifactId>spigot-api</artifactId>
+				<version>${bukkitVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>spigotmc.org</groupId>
+				<artifactId>spigot-1.15.1</artifactId>
+				<scope>system</scope>
+				<systemPath>${server.jars}/spigot-1.15.1.jar</systemPath>
+				<version>1.15.1</version>
+			</dependency>
+	        <dependency>
+	            <groupId>org.projectlombok</groupId>
+	            <artifactId>lombok</artifactId>
+	            <version>1.16.6</version>
+	            <scope>provided</scope>
+	        </dependency>
+		    <dependency>
+		        <groupId>net.ess3</groupId>
+		        <artifactId>EssentialsX</artifactId>
+		        <version>2.17.1</version>
+		        <scope>provided</scope>
+		    </dependency>
+		    <dependency>
+		        <groupId>com.github.MilkBowl</groupId>
+		        <artifactId>VaultAPI</artifactId>
+		        <version>1.7</version>
+		        <scope>provided</scope>
+		    </dependency>
+        </dependencies>
+</project>
