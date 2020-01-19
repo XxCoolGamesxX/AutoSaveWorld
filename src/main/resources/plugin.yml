@@ -1,5 +1,5 @@
 name: AutoSaveWorld
-main: net.megaplanet.AutoSaveWorld
+main: autosaveworld.core.AutoSaveWorld
 version: ${project.version}
 author: _Shevchik_, XxCoolGamesxX
 load: STARTUP
