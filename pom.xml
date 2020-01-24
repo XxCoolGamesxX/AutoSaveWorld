@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- Change MC Version HERE! -->
-		<bukkitVersion>1.15.1-R0.1-SNAPSHOT</bukkitVersion>
+		<bukkitVersion>1.15.2-R0.1-SNAPSHOT</bukkitVersion>
 
 		<server.jars>${project.basedir}/libs</server.jars>
 	</properties>
@@ -97,10 +97,10 @@
 			</dependency>
 			<dependency>
 				<groupId>spigotmc.org</groupId>
-				<artifactId>spigot-1.15.1</artifactId>
+				<artifactId>spigot-1.15.2</artifactId>
 				<scope>system</scope>
-				<systemPath>${server.jars}/spigot-1.15.1.jar</systemPath>
-				<version>1.15.1</version>
+				<systemPath>${server.jars}/spigot-1.15.2.jar</systemPath>
+				<version>1.15.2</version>
 			</dependency>
 	        <dependency>
 	            <groupId>org.projectlombok</groupId>

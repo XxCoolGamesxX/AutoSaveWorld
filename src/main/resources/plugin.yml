@@ -1,5 +1,6 @@
 name: AutoSaveWorld
 main: autosaveworld.core.AutoSaveWorld
+api-version: 1.15
 version: ${project.version}
 author: _Shevchik_, XxCoolGamesxX
 load: STARTUP
